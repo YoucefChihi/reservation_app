@@ -6,13 +6,14 @@
         <li><?= $this->Html->link(__('New Equipement'), ['controller' => 'Equipement', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="hotel index large-9 medium-8 columns content">
+<div class="content">
     <h3><?= __('Hotel') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table">
         <thead>
             <tr>
-                <th><?= $this->Paginator->sort('id_hotel') ?></th>
-                <th><?= $this->Paginator->sort('nb_etoile') ?></th>
+                <th><?= $this->Paginator->sort('id_hotel', 'Hotel ID') ?></th>
+                <th><?= $this->Paginator->sort('nom_hotel', 'Hotel Name') ?></th>
+                <th><?= $this->Paginator->sort('nb_etoile', 'Stars') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@
             <?php foreach ($hotel as $hotel): ?>
             <tr>
                 <td><?= $this->Number->format($hotel->id_hotel) ?></td>
+                <td><?= h($hotel->nom_hotel) ?></td>
                 <td><?= $this->Number->format($hotel->nb_etoile) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $hotel->id_hotel]) ?>

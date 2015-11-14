@@ -93,7 +93,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </div>
             <!-- /.row -->
 
-            <div>
+            <div class="row">
                 <?= $this->fetch('content') ?>
             </div>
 
